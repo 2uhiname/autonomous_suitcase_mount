@@ -1,74 +1,450 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>RF Controlled Car Project</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 40px;
-            background-color: #f4f4f4;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
+<title>ARGO - Autonomous Rolling Guided Object</title>
 
-        h1 {
-            color: #222;
-        }
+<style>
 
-        a {
-            color: blue;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        img {
-            width: 600px;
-            border-radius: 10px;
-        }
-    </style>
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    height:100vh;
+    background:linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.9)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.hero h2{
+    font-size:28px;
+    margin-bottom:20px;
+    font-weight:normal;
+}
+
+.hero p{
+    font-size:20px;
+    color:#cbd5e1;
+}
+
+.button{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    background:#38bdf8;
+    color:black;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.button:hover{
+    background:white;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#38bdf8;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#7dd3fc;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.stat-box{
+    background:#1e293b;
+    padding:30px;
+    text-align:center;
+    border-radius:20px;
+}
+
+.stat-box h2{
+    font-size:40px;
+    color:#38bdf8;
+}
+
+.timeline{
+    border-left:4px solid #38bdf8;
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:40px;
+}
+
+.timeline-item h3{
+    color:#7dd3fc;
+}
+
+footer{
+    background:#020617;
+    text-align:center;
+    padding:40px;
+    color:#94a3b8;
+}
+
+a{
+    color:#38bdf8;
+}
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:20px;
+}
+
+.tech{
+    background:#334155;
+    padding:10px 18px;
+    border-radius:30px;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<h1>RF Controlled Car Project</h1>
+<div class="hero">
+
+<h1>ARGO</h1>
+
+<h2>Autonomous Rolling Guided Object</h2>
 
 <p>
-This project uses AVR128DB28 microcontrollers and RF communication
-to control a robotic vehicle wirelessly.
+A smart autonomous luggage-following attachment designed for airport terminals.
+ARGO combines BLE tracking, ultrasonic obstacle avoidance,
+embedded systems, motor control, and custom PCB design
+to create a universal robotic suitcase platform.
 </p>
 
-<h2>Project Features</h2>
-
-<ul>
-    <li>RF wireless control</li>
-    <li>Motor driver integration</li>
-    <li>Button-based transmitter</li>
-    <li>Real-time receiver decoding</li>
-</ul>
-
-<h2>Documents</h2>
-
-<p>
-<a href="Design Specification Report.pdf">
-Design Specification Report
+<a class="button" href="Final Presentation & Demonstration.pdf">
+View Final Presentation
 </a>
-</p>
 
-<p>
-<a href="Final Presentation & Demonstration.pdf">
-Final Presentation & Demonstration
+<a class="button" href="Design Specification Report.pdf">
+View Design Report
 </a>
-</p>
-
-<h2>Project Images</h2>
-
-<p>Add screenshots or photos here later.</p>
 
 </div>
+
+</header>
+
+<section>
+
+<h2 class="section-title">Project Overview</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>The Problem</h3>
+<p>
+Travelers often struggle with carrying heavy luggage through crowded airports,
+especially mobility-impaired users. Existing smart suitcases force users
+to purchase specialized luggage.
+</p>
+</div>
+
+<div class="card">
+<h3>Our Solution</h3>
+<p>
+ARGO is a universal attachment that converts almost any suitcase into an
+autonomous following system using Bluetooth Low Energy tracking and
+real-time obstacle avoidance.
+</p>
+</div>
+
+<div class="card">
+<h3>Key Features</h3>
+<p>
+• BLE smartphone tracking<br>
+• Autonomous follow mode<br>
+• Alarm mode<br>
+• 180° obstacle detection<br>
+• Custom PCB integration<br>
+• Differential motor drive system
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Engineering Systems</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>BLE Tracking</h3>
+<p>
+Three ESP32-S3 modules estimate user direction and distance using RSSI values
+from a smartphone BLE beacon. Data is transmitted through UART
+to the motor control system.
+</p>
+</div>
+
+<div class="card">
+<h3>Obstacle Avoidance</h3>
+<p>
+Two HC-SR04 ultrasonic sensors mounted on a sweeping servo provide
+180° forward coverage. The system dynamically maps obstacles and
+executes collision avoidance maneuvers.
+</p>
+</div>
+
+<div class="card">
+<h3>Motor Control</h3>
+<p>
+A Raspberry Pi Pico generates PWM signals to dual L298N motor drivers
+which control a differential drive system powered by 12V DC motors.
+</p>
+</div>
+
+<div class="card">
+<h3>Custom PCB</h3>
+<p>
+A custom PCB designed in KiCad integrated the servo interface,
+ultrasonic sensors, DAC audio circuitry, and obstacle avoidance systems.
+</p>
+</div>
+
+<div class="card">
+<h3>Battery System</h3>
+<p>
+The platform uses a custom 12-cell recycled 18650 lithium-ion battery pack
+with a 3S BMS and DC-DC buck converter for regulated subsystem power.
+</p>
+</div>
+
+<div class="card">
+<h3>Mechanical Design</h3>
+<p>
+The chassis uses recycled BMW seat motors,
+custom 3D printed gears, acrylic panels,
+and SolidWorks-designed mounting systems.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Technical Skills Demonstrated</h2>
+
+<div class="tech-stack">
+
+<div class="tech">Embedded Systems</div>
+<div class="tech">ESP32</div>
+<div class="tech">Raspberry Pi Pico</div>
+<div class="tech">UART Communication</div>
+<div class="tech">PWM Motor Control</div>
+<div class="tech">Bluetooth Low Energy</div>
+<div class="tech">PCB Design</div>
+<div class="tech">KiCad</div>
+<div class="tech">LTSpice</div>
+<div class="tech">3D Printing</div>
+<div class="tech">SolidWorks</div>
+<div class="tech">Battery Management Systems</div>
+<div class="tech">Ultrasonic Sensors</div>
+<div class="tech">System Integration</div>
+<div class="tech">Hardware Debugging</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Project Metrics</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2>304</h2>
+<p>Engineering Hours</p>
+</div>
+
+<div class="stat-box">
+<h2>$238</h2>
+<p>Total Prototype Cost</p>
+</div>
+
+<div class="stat-box">
+<h2>180°</h2>
+<p>Obstacle Detection Coverage</p>
+</div>
+
+<div class="stat-box">
+<h2>15 min</h2>
+<p>Battery Runtime</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Challenges & Lessons Learned</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>PCB Amplifier Failure</h3>
+<p>
+The DAC-amplifier audio circuit functioned in simulation
+but failed during physical implementation due to schematic discrepancies
+and voltage interfacing issues.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Motor Driver Heating</h3>
+<p>
+Continuous motor operation caused thermal buildup in the L298N drivers.
+Additional cooling using a 40mm fan solved the issue.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>System Integration Complexity</h3>
+<p>
+Combining BLE tracking and obstacle avoidance into a single autonomous
+control loop proved significantly more challenging than standalone subsystem operation.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Key Takeaway</h3>
+<p>
+Real-world hardware integration often differs dramatically from simulations.
+Iterative debugging and subsystem isolation were critical to project success.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Project Documents</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Final Presentation</h3>
+<p>
+Complete project demonstration, subsystem testing,
+and final prototype walkthrough.
+</p>
+
+<br>
+
+<a href="Final Presentation & Demonstration.pdf">
+Open Presentation PDF
+</a>
+</div>
+
+<div class="card">
+<h3>Design Specification Report</h3>
+<p>
+Full technical report including engineering analysis,
+PCB design, future work, and system architecture.
+</p>
+
+<br>
+
+<a href="Design Specification Report.pdf">
+Open Design Report
+</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>Team ARGO — Group 12</h2>
+
+<p>
+Electrical Engineering Design Project
+</p>
+
+<br>
+
+<p>
+Built using Embedded Systems, BLE Tracking, Motor Control,
+and Autonomous Navigation
+</p>
+
+</footer>
 
 </body>
 </html>
